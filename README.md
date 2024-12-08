@@ -28,10 +28,28 @@ Run the following command to clone the project:
 ```bash
 git clone https://github.com/monafHorany/library-management.git
 cd library-management
+```
+### 2. Install Dependencies
+```bash
 npm install
+```
+### 3. Initialize PostgreSQL with Docker
+```bash
 docker run --name library-db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=library -p 5432:5432 -d postgres
+```
+### 4. Configure Prisma
+```bash
+DATABASE_URL="postgresql://user:password@localhost:5432/library?schema=public"
+
 npx prisma generate
+
+```
+### 5. Seed the Database
+```bash
 npx ts-node prisma/seed.ts
+```
+### 6. Start the Application
+```bash
 npm run dev
 ```
 
