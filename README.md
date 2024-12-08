@@ -43,6 +43,7 @@ DATABASE_URL="postgresql://user:password@localhost:5432/library?schema=public"
 
 npx prisma generate
 
+npx prisma db push
 ```
 ### 5. Seed the Database
 ```bash
